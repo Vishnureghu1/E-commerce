@@ -1,17 +1,20 @@
 <template>
-  <div class="card card-gape" style="width: 18rem">
-    <img :src="image" class="card-img-top" alt="sample" />
-    <div class="card-body">
-      <h5 class="card-title">
-        <router-link :to="{ name: 'product', params: { id: productId } }">{{
-          productTitle
-        }}</router-link>
-      </h5>
-      <strong>${{ producPrice }}</strong>
-      <p class="card-text">
-        {{ productDescription }}
-      </p>
-      <a href="#" class="btn btn-primary">Add to Cart</a>
+  <div class="demo">
+    <div v-for="product in products" :key="product.id">
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          :src="product.images[1]"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text">
+            {{ product.description }}
+          </p>
+          <a href="#" class="btn btn-primary">Add to Cart</a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -20,35 +23,18 @@
 export default {
   name: "product-card",
   props: ["products"],
-  data() {
-    return {
-      image: "",
-      productId: null,
-      productTitle: "",
-      producPrice: "",
-      productDescription: "",
-    };
-  },
-  created() {
-    this.getProductsRelatedData();
-  },
-  methods: {
-    getProductsRelatedData() {
-      let getData = this.products.products;
-      getData.forEach((element) => {
-        this.image = element.images[1];
-        this.productId = element.id;
-        this.productTitle = element.title;
-        this.producPrice = element.price;
-        this.productDescription = element.description;
-      });
-    },
-  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.demo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
 h3 {
   margin: 40px 0 0;
 }

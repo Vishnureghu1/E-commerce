@@ -1,4 +1,5 @@
 export const SET_PRODUCTS = (state, products) => {
+  console.log("productsproducts", products);
   state.products = products;
 };
 

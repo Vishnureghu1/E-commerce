@@ -1,10 +1,6 @@
 <template>
-  <div class="d-flex align-items-stretch flex-wrap justify-content-center">
-    <product-card
-      v-for="products in getProducts.products"
-      :key="products.id"
-      :products="getProducts"
-    />
+  <div>
+    <product-card :products="getProducts" />
   </div>
 </template>
 

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getProducts = ({ commit }) => {
   axios.get("https://dummyjson.com/products").then((response) => {
-    commit("SET_PRODUCTS", response.data);
+    commit("SET_PRODUCTS", response.data.products);
   });
 };
 
