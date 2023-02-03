@@ -1,45 +1,46 @@
 <template>
-  <div class="row mt-5">
-    <div class="col-4">
-      <img alt="sampple" class="w-100" />
-    </div>
-    <div class="col-8">
-      <h1>Product title</h1>
-      <h3>$34</h3>
-
-      <input type="text" class="text-center col-1 mr-2 p-1" />
-      <button class="btn btn-primary">Add to Cart</button>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
-        voluptates cumque reprehenderit eaque, saepe quos placeat, vitae,
-        consequatur fuga nobis excepturi tempore perferendis nisi iste. Itaque,
-        minima! Natus, necessitatibus facere?
-      </p>
+  <div>
+    <div
+      v-if="procuct"
+      class="card-10"
+      style="width: 510px; height: auto; margin-left: 40px"
+    >
+      <div class="row">
+        <div class="col-sm-6">
+          <img class="card-img" :src="procuct.images[0]" alt="Card image" />
+        </div>
+        <div class="col-sm-6">
+          <div class="card-body-right">
+            <h4 class="card-title">{{ procuct.title }}</h4>
+            <h1>$ {{ procuct.price }}</h1>
+            <input type="text" class="text-center col-3 mr-2 p-2" />
+            <button class="btn btn-primary" style="margin-left: 9px">
+              Add to Cart
+            </button>
+            <p class="mt-2">
+              {{ procuct.description }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "product-page",
+  name: "product-list",
   props: ["id"],
-  mounted() {
-    console.log("ssssssssssss", this.id);
-    this.$store.dispatch("getProduct", this.id);
-  },
   computed: {
-    product() {
+    procuct() {
       return this.$store.state.product;
     },
   },
   created() {
-    this.getProdData;
+    this.$store.dispatch("getProduct", this.id);
   },
-  methods: {
-    getProdData() {
-      this.product;
-      console.log("getProdData", this.product);
-    },
+  mounted() {
+    this.procuct;
   },
 };
 </script>
