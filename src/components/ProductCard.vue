@@ -1,18 +1,24 @@
 <template>
-  <div class="demo">
-    <div v-for="product in products" :key="product.id">
-      <div class="card" style="width: 18rem">
-        <img
-          class="card-img-top"
-          :src="product.images[1]"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <h5 class="card-title">{{ product.title }}</h5>
-          <p class="card-text">
-            {{ product.description }}
-          </p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
+  <div class="row">
+    <div
+      v-for="product in products"
+      :key="product.is"
+      class="card col-3 mt-5"
+      style="width: 18rem; margin-left: 85px"
+    >
+      <img class="card-img-top" :src="product.images[0]" alt="Card image cap" />
+      <div class="card-body">
+        <h5 class="card-title">
+          <router-link :to="{ name: 'product', params: { id: product.id } }">{{
+            product.title
+          }}</router-link>
+        </h5>
+        <strong>${{ product.price }}</strong>
+        <p class="card-text">
+          {{ product.description }}
+        </p>
+        <div>
+          <button class="btn btn-primary mb-0">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -27,14 +33,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
-.demo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100vh;
-}
 h3 {
   margin: 40px 0 0;
 }
