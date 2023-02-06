@@ -2,7 +2,7 @@
   <div class="row">
     <div
       v-for="product in products"
-      :key="product.is"
+      :key="product.id"
       class="card col-3 mt-5"
       style="width: 18rem; margin-left: 85px"
     >
@@ -18,7 +18,9 @@
           {{ product.description }}
         </p>
         <div>
-          <button class="btn btn-primary mb-0">Add to Cart</button>
+          <button class="btn btn-primary mb-0" @click="addToCart(product.id)">
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
@@ -29,6 +31,15 @@
 export default {
   name: "product-card",
   props: ["products"],
+
+  methods: {
+    addToCart(productId) {
+      this.$store.dispatch("addProductToCart", {
+        product: productId,
+        quantity: 1,
+      });
+    },
+  },
 };
 </script>
 
