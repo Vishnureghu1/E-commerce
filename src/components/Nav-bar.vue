@@ -127,9 +127,8 @@ export default {
 .main-navbar .top-navbar .dropdown-menu {
   padding: 0px 0px;
   border-radius: 0px;
-
-  margin-left: -238px !important;
-  margin-top: 13px !important;
+  margin-left: -463px !important;
+  margin-top: 30px !important;
 }
 .main-navbar .top-navbar .dropdown-menu .dropdown-item {
   padding: 8px 16px;
