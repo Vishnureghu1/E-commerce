@@ -6,7 +6,13 @@
       class="card col-3 mt-5"
       style="width: 18rem; margin-left: 85px"
     >
-      <img class="card-img-top" :src="product.images[0]" alt="Card image cap" />
+      <img
+        class="card-img-top"
+        width="280px"
+        height="300px"
+        :src="product.images[0]"
+        alt="Card image cap"
+      />
       <div class="card-body">
         <h5 class="card-title">
           <router-link :to="{ name: 'product', params: { id: product.id } }">{{

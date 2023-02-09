@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import HomePage from "../components/HomePage";
 import Product from "../pages/Product.vue";
+import PaymentPage from "../components/PaymentPage.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -24,6 +25,11 @@ const routes = [
     component: Product,
     name: "product",
     props: true,
+  },
+  {
+    path: "/payment",
+    name: "payment",
+    component: PaymentPage,
   },
 ];
 

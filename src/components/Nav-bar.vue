@@ -74,18 +74,6 @@
               <li class="nav-item">
                 <router-link to="/productlist">All Categories</router-link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Featured Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Electronics</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Fashions</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Accessories</a>
-              </li>
             </ul>
           </div>
         </div>
