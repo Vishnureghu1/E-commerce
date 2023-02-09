@@ -4,4 +4,5 @@ export default {
   addToCart: [],
   cart: [],
   notifications: [],
+  userSearchTearm: "",
 };

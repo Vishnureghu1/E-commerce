@@ -12,10 +12,6 @@ export const ADD_TO_CART = (state, { product, quantity }) => {
   });
   if (productsInCart) {
     productsInCart.quantity += quantity;
-    console.log(
-      " productsInCart.quantity += quantity; productsInCart.quantity += quantity;",
-      (productsInCart.quantity += quantity)
-    );
     return;
   }
 
@@ -40,4 +36,8 @@ export const PUSH_NOTIFICATION = (state, notifications) => {
     ...notifications,
     id: Math.random().toString(36) + Date.now().toString(36).substr(2),
   });
+};
+
+export const SET_SEARCH_TEARM = (state, payload) => {
+  state.userSearchTearm = payload;
 };
