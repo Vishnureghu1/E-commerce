@@ -16,6 +16,7 @@
                     type="search"
                     placeholder="Search your product"
                     class="form-control"
+                    v-model="userSearchTearm"
                   />
                 </div>
               </form>
@@ -103,6 +104,14 @@ export default {
   },
   computed: {
     ...mapGetters(["cartItemCount"]),
+    userSearchTearm: {
+      get() {
+        return this.$store.state.userSearchTearm;
+      },
+      set(newValue) {
+        return this.$store.commit("SET_SEARCH_TEARM", newValue);
+      },
+    },
   },
 };
 </script>
